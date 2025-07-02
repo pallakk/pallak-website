@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Pallak Dhabalia | CS + DS @ UMich</title>
+  <link href="https://fonts.googleapis.com/css?family=Montserrat:700,400&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --accent: #bcaaa4;          /* warm brown accent */
+      --accent-hover: #a1887f;    /* deeper brown accent */
+      --bg: #3e2723;              /* deep dark brown */
+      --section: #4e342e;         /* dark brown */
+      --section-light: #795548;   /* lighter brown */
+      --text: #fff8e1;            /* creamy white */
+      --text-subtle: #d7ccc8;     /* light tan */
+      --nav-bg: #4e342e;          /* dark brown */
+      --nav-shadow: 0 2px 12px rgba(62,39,35,0.20);
+      --card-shadow: 0 2px 24px rgba(188,170,164,0.08);
+      --skill-bg: #6d4c41;        /* medium brown */
+      --skill-border: #bcaaa4;
+      --footer: #4e342e;
+    }
+    html, body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Montserrat', Arial, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      scroll-behavior: smooth;
+    }
+    body {
+      min-height: 100vh;
+      overflow-x: hidden;
+    }
+    nav {
+      position: sticky;
+      top: 0;
+      width: 100%;
+      background: var(--nav-bg);
+      box-shadow: var(--nav-shadow);
+      z-index: 100;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 0.5rem 0;
+    }
+    .nav-inner {
+      display: flex;
+      gap: 2.5rem;
+      font-weight: 700;
+      font-size: 1.1rem;
+    }
+    .nav-inner a {
+      color: var(--text);
+      text-decoration: none;
+      transition: color 0.2s, border-bottom 0.2s;
+      padding: 0.3rem 0;
+      border-bottom: 2px solid transparent;
+    }
+    .nav-inner a.active, .nav-inner a:hover {
+      color: var(--accent);
+      border-bottom: 2px solid var(--accent);
+    }
+    .hero {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 90vh;
+      background: linear-gradient(120deg, #4e342e 0%, #3e2723 100%);
+      text-align: center;
+      padding: 2rem 1rem 3rem 1rem;
+    }
+    .hero-img {
+      width: 170px;
+      height: 170px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 6px solid var(--accent);
+      margin-bottom: 1.5rem;
+      box-shadow: 0 4px 32px rgba(188,170,164,0.15);
+      background: #6d4c41;
+    }
+    .hero-title {
+      font-size: 2.5rem;
+      font-weight: 700;
+      margin-bottom: 0.5rem;
+      color: var(--accent);
+      letter-spacing: -1px;
+    }
+    .hero-sub {
+      font-size: 1.25rem;
+      font-weight: 400;
+      margin-bottom: 1.2rem;
+      color: var(--text-subtle);
+    }
+    .hero-desc {
+      font-size: 1.1rem;
+      max-width: 480px;
+      margin: 0 auto 2rem auto;
+      color: var(--text-subtle);
+    }
+    .hero-btns {
+      display: flex;
+      gap: 1.2rem;
+      justify-content: center;
+      margin-bottom: 0.5rem;
+    }
+    .hero-btn {
+      background: var(--accent);
+      color: #3e2723;
+      border: none;
+      border-radius: 22px;
+      padding: 0.7rem 1.6rem;
+      font-size: 1rem;
+      font-weight: 600;
+      cursor: pointer;
+      box-shadow: 0 2px 8px rgba(188,170,164,0.10);
+      transition: background 0.2s, color 0.2s;
+      text-decoration: none;
+      display: inline-block;
+    }
+    .hero-btn:hover {
+      background: var(--accent-hover);
+      color: #fff8e1;
+    }
+    section {
+      max-width: 780px;
+      margin: 0 auto;
+      padding: 4rem 1.2rem 2.5rem 1.2rem;
+      border-radius: 18px;
+      background: var(--section);
+      box-shadow: var(--card-shadow);
+      margin-bottom: 3rem;
+    }
+    h2 {
+      color: var(--accent);
+      font-size: 2rem;
+      margin-bottom: 1.2rem;
+      font-weight: 700;
+      letter-spacing: -1px;
+    }
+    .section-content {
+      font-size: 1.08rem;
+      color: var(--text-subtle);
+    }
+    .project-list, .exp-list, .edu-list, .skills-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+    .project-item, .exp-item, .edu-item {
+      margin-bottom: 2.2rem;
+    }
+    .project-title, .exp-title, .edu-title {
+      font-weight: 600;
+      color: #d7ccc8;
+      font-size: 1.15rem;
+      margin-bottom: 0.15rem;
+    }
+    .project-desc, .exp-desc, .edu-desc {
+      margin-bottom: 0.4rem;
+      color: var(--text-subtle);
+    }
+    .project-links a {
+      color: var(--accent);
+      margin-right: 1rem;
+      font-size: 0.98rem;
+    }
+    .skills-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.7rem;
+      margin-top: 0.7rem;
+    }
+    .skill {
+      background: var(--skill-bg);
+      color: var(--accent);
+      border-radius: 14px;
+      padding: 0.4rem 1rem;
+      font-size: 1.01rem;
+      font-weight: 600;
+      margin-bottom: 0.2rem;
+      border: 1px solid var(--skill-border);
+    }
+    .contact-info {
+      font-size: 1.1rem;
+      margin-bottom: 1.2rem;
+    }
+    .contact-info a {
+      color: var(--accent);
+      text-decoration: none;
+    }
+    .contact-info a:hover {
+      text-decoration: underline;
+    }
+    footer {
+      text-align: center;
+      padding: 1.5rem 0 1rem 0;
+      font-size: 1rem;
+      color: #d7ccc8;
+      background: var(--footer);
+    }
+    @media (max-width: 600px) {
+      .hero-title { font-size: 1.5rem; }
+      .hero-img { width: 110px; height: 110px; }
+      nav .nav-inner { gap: 1.1rem; font-size: 0.98rem; }
+      section { padding: 2.2rem 0.5rem 1.2rem 0.5rem; }
+      h2 { font-size: 1.3rem; }
+    }
+  </style>
+</head>
+<body>
+  <!-- Navigation -->
+  <nav>
+    <div class="nav-inner">
+      <a href="#about" class="nav-link active">About</a>
+      <a href="#projects" class="nav-link">Projects</a>
+      <a href="#experience" class="nav-link">Experience</a>
+      <a href="#education" class="nav-link">Education</a>
+      <a href="#skills" class="nav-link">Skills</a>
+      <a href="#contact" class="nav-link">Contact</a>
+    </div>
+  </nav>
+
+  <!-- Hero / About -->
+  <div class="hero" id="about">
+    <img src="headshot-pallak.png" alt="Pallak Dhabalia" class="hero-img" />
+    <!-- Replace the src above with your own profile image link! -->
+    <div class="hero-title">Pallak Dhabalia</div>
+    <div class="hero-sub">CS + Data Science @ University of Michigan</div>
+    <div class="hero-desc">
+      Hi! I’m Pallak, a Computer Science student at UMich passionate about impactful tech. From machine learning to AI-driven projects, I love building solutions that make a difference. Always eager to learn, collaborate, and create—let’s connect if you're passionate about tech and innovation!
+    </div>
+    <div class="hero-btns">
+      <a href="https://github.com/pallakk" class="hero-btn" target="_blank">GitHub</a>
+      <a href="https://www.linkedin.com/in/pallak-dhabalia" class="hero-btn" target="_blank">LinkedIn</a>
+      <a href="mailto:pallak@umich.edu" class="hero-btn">Email</a>
+    </div>
+  </div>
+
+  <!-- Projects -->
+  <section id="projects">
+    <h2>Projects</h2>
+    <ul class="project-list">
+      <li class="project-item">
+        <div class="project-title">Semantic Search Research Paper Finder</div>
+        <div class="project-desc">
+          Built a semantic search engine that retrieves the most relevant academic paper abstracts from the arXiv dataset using Sentence-BERT embeddings and cosine similarity. Developed both CLI and Flask-based UI for offline semantic querying.
+        </div>
+        <div class="project-links">
+          <a href="https://github.com/pallakk/Semantic-Search---Research-Paper-Finder" target="_blank">GitHub</a>
+        </div>
+      </li>
+      <li class="project-item">
+        <div class="project-title">Michigan Hackers - Trading Strategy</div>
+        <div class="project-desc">
+          Collaboratively developed and optimized trading strategies focused on financial data analysis and risk management. Utilized statistical methods to refine models and enhance performance.
+        </div>
+        <div class="project-links">
+          <a href="https://github.com/MHackers-Quant/Trading-Strategies" target="_blank">GitHub</a>
+        </div>
+      </li>
+      <li class="project-item">
+        <div class="project-title">Right Ventricle Dysfunction Prognosis Model</div>
+        <div class="project-desc">
+          Developed machine learning and statistical models to predict patient outcomes and enhance clinical decision-making for LVAD patients. Presented research at UROP Symposium.
+        </div>
+        <div class="project-links">
+          <a href="https://github.com/pallakk/RV-Prediction-Model-" target="_blank">GitHub</a>
+        </div>
+      </li>
+      <li class="project-item">
+        <div class="project-title">Object Detection Software</div>
+        <div class="project-desc">
+          Developed an object detection system using OpenCV to enhance drone capabilities for real-time recognition and tracking as part of the Michigan Drone Technology AI Subteam.
+        </div>
+        <div class="project-links">
+          <a href="https://github.com/pallakk/MDT-AI" target="_blank">GitHub</a>
+        </div>
+      </li>
+    </ul>
+  </section>
+
+  <!-- Experience -->
+  <section id="experience">
+    <h2>Experience</h2>
+    <ul class="exp-list">
+      <li class="exp-item">
+        <div class="exp-title">Data Management Intern, Otsuka Pharmaceutical Companies (U.S.)</div>
+        <div class="exp-desc">
+          May 2025 - Present<br>
+          Developed, tested, and deployed automation scripts in Python to streamline system integration and data reporting. Utilized SQL for data extraction and validation. Collaborated with cross-functional teams to enhance system reliability and data quality.
+        </div>
+      </li>
+      <li class="exp-item">
+        <div class="exp-title">Undergraduate Student Researcher, University of Michigan</div>
+        <div class="exp-desc">
+          Sep 2024 - Apr 2025<br>
+          Led development of a multidisciplinary project predicting right ventricular failure in LVAD patients using computational models and machine learning.
+        </div>
+      </li>
+      <li class="exp-item">
+        <div class="exp-title">Quantitative Developer, Michigan Hackers</div>
+        <div class="exp-desc">
+          Sep 2024 - Present<br>
+          Built and optimized algorithmic trading strategies using Python and statistical analysis.
+        </div>
+      </li>
+      <li class="exp-item">
+        <div class="exp-title">AI/ML Team Member, Michigan Drone Technology</div>
+        <div class="exp-desc">
+          Jan 2024 - May 2024<br>
+          Developed and integrated YOLO object detection models for drone navigation.
+        </div>
+      </li>
+    </ul>
+  </section>
+
+  <!-- Education -->
+  <section id="education">
+    <h2>Education</h2>
+    <ul class="edu-list">
+      <li class="edu-item">
+        <div class="edu-title">University of Michigan</div>
+        <div class="edu-desc">
+          Bachelor of Science (BS), Computer Science<br>
+          Aug 2023 - Dec 2026<br>
+          Activities: Michigan Data Science Team, Society of Women Engineers, Michigan Hackers, Michigan Drone Technology
+        </div>
+      </li>
+      <li class="edu-item">
+        <div class="edu-title">Indian School Al Ghubra</div>
+        <div class="edu-desc">
+          High School Diploma<br>
+          Activities: Model United Nations Bureau Member, Student Prefectoral Body Leader
+        </div>
+      </li>
+    </ul>
+  </section>
+
+  <!-- Skills -->
+  <section id="skills">
+    <h2>Skills</h2>
+    <div class="skills-list">
+      <span class="skill">Python</span>
+      <span class="skill">SQL</span>
+      <span class="skill">Machine Learning</span>
+      <span class="skill">Data Analysis</span>
+      <span class="skill">Semantic Search</span>
+      <span class="skill">NLP</span>
+      <span class="skill">MATLAB</span>
+      <span class="skill">Computer Vision</span>
+      <span class="skill">Algorithmic Trading</span>
+      <span class="skill">BERT</span>
+      <span class="skill">C++</span>
+      <span class="skill">Flask</span>
+      <span class="skill">OpenCV</span>
+      <span class="skill">YOLO</span>
+      <span class="skill">Pandas</span>
+      <span class="skill">Scikit-learn</span>
+      <span class="skill">Git</span>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section id="contact">
+    <h2>Contact</h2>
+    <div class="contact-info">
+      <div>Email: <a href="mailto:pallak@umich.edu">pallak@umich.edu</a></div>
+      <div>LinkedIn: <a href="https://www.linkedin.com/in/pallak-dhabalia" target="_blank">linkedin.com/in/pallak-dhabalia</a></div>
+      <div>GitHub: <a href="https://github.com/pallakk" target="_blank">github.com/pallakk</a></div>
+    </div>
+  </section>
+
+  <footer>
+    &copy; 2025 Pallak Dhabalia. All rights reserved.
+  </footer>
+
+  <script>
+    // Smooth scroll and active nav link highlight
+    const navLinks = document.querySelectorAll('.nav-link');
+    const sections = Array.from(document.querySelectorAll('section, .hero'));
+    window.addEventListener('scroll', () => {
+      let current = '';
+      sections.forEach(section => {
+        const sectionTop = section.offsetTop - 90;
+        if (window.scrollY >= sectionTop) {
+          current = section.getAttribute('id');
+        }
+      });
+      navLinks.forEach(link => {
+        link.classList.remove('active');
+        if (link.getAttribute('href').includes(current)) {
+          link.classList.add('active');
+        }
+        // Special case for About/Hero
+        if (!current && link.getAttribute('href') === '#about') {
+          link.classList.add('active');
+        }
+      });
+    });
+  </script>
+</body>
+</html>
