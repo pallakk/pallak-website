@@ -5,140 +5,96 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Pallak Dhabalia</title>
   <style>
+    /* ----- GLOBAL STYLES ----- */
     body {
-  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-  margin: 0;
-  padding: 0;
-  background: #EEEBd0; /* beige background */
-  color: #333; /* neutral text */
-  line-height: 1.6;
-}
+      margin: 0;
+      padding: 0;
+      font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+      color: #fff; /* white text */
+      background: url("images/bg.jpg") no-repeat center center fixed; /* replace with your stars image path */
+      background-size: cover;
+      scroll-behavior: smooth;
+    }
 
-/* ----- HEADER ----- */
-header {
-  background: #E87EA1; /* rose pompadour */
-  color: white;
-  padding: 2rem 1rem;
-  text-align: center;
-}
-header h1 {
-  margin: 0.2rem 0;
-  font-size: 2.2rem;
-  color: white;
-}
+    section {
+      height: 100vh; /* each section full screen */
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 2rem;
+      background: rgba(0, 0, 0, 0.6); /* dark overlay */
+    }
+    section h1, section h2 {
+      margin-bottom: 1rem;
+      color: #fdf6e3; /* pale star-yellow highlight */
+    }
+    section p {
+      max-width: 700px;
+      margin: auto;
+      font-size: 1.2rem;
+      line-height: 1.6;
+      color: #ddd; /* softer text */
+    }
 
-/* ----- NAVIGATION ----- */
-nav {
-  background: #E86252; /* bittersweet */
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  padding: 0.7rem;
-}
-nav a {
-  margin: 0.5rem 1rem;
-  text-decoration: none;
-  color: white;
-  font-weight: 600;
-}
-nav a:hover {
-  color: #EEEBd0; /* beige hover */
-}
+    /* ----- REVEAL ANIMATION ----- */
+    .reveal {
+      opacity: 0;
+      transform: translateY(40px);
+      transition: all 0.8s ease;
+    }
+    .reveal.active {
+      opacity: 1;
+      transform: translateY(0);
+    }
 
-/* ----- SECTION TITLES ----- */
-section h2 {
-  border-bottom: 2px solid #EBB3A9; /* melon accent */
-  padding-bottom: 0.3rem;
-  margin-bottom: 1rem;
-  color: #E86252; /* bittersweet text */
-}
+    /* ----- NAVBAR ----- */
+    nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      background: rgba(0, 0, 0, 0.8); /* translucent black */
+      display: flex;
+      justify-content: center;
+      gap: 1.5rem;
+      padding: 0.8rem;
+      z-index: 1000;
+      backdrop-filter: blur(6px);
+    }
+    nav a {
+      color: #fdf6e3; /* pale star-yellow */
+      text-decoration: none;
+      font-weight: 600;
+      transition: color 0.3s;
+    }
+    nav a:hover {
+      color: #a0aec0; /* soft blue-gray */
+    }
 
-/* ----- EXPERIENCE & EDUCATION ----- */
-.experience, .education {
-  background: white;
-  border-left: 5px solid #E87EA1; /* rose pompadour accent */
-  padding: 1rem;
-  margin-bottom: 1.5rem;
-  border-radius: 6px;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.05);
-}
-
-/* ----- PROJECTS GRID ----- */
-.projects ul {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-  gap: 1rem;
-  list-style: none;
-  padding: 0;
-}
-.projects li {
-  background: white;
-  border: 1px solid #EBB3A9; /* melon accent */
-  border-radius: 8px;
-  padding: 1rem;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.05);
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
-}
-.projects li:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-}
-.projects h3 a {
-  color: #E86252; /* bittersweet */
-  text-decoration: none;
-}
-.projects h3 a:hover {
-  color: #E87EA1; /* rose pompadour */
-  text-decoration: underline;
-}
-
-/* ----- SKILLS ----- */
-ul.skills {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-  gap: 0.5rem;
-  list-style: none;
-  padding: 0;
-}
-ul.skills li {
-  background: #EBB3A9; /* melon card */
-  color: white;
-  padding: 0.6rem;
-  border-radius: 6px;
-  text-align: center;
-  font-weight: 600;
-}
-
-/* ----- FOOTER ----- */
-footer {
-  text-align: center;
-  padding: 1.5rem;
-  background: #E87EA1; /* rose pompadour */
-  color: white;
-  margin-top: 2rem;
-}
-footer a {
-  color: #EEEBd0; /* beige links */
-  text-decoration: none;
-  margin: 0 0.5rem;
-}
-footer a:hover {
-  color: #E86252; /* bittersweet hover */
-}
-
-/* Smooth scrolling */
-html {
-  scroll-behavior: smooth;
-}
+    /* ----- FOOTER ----- */
+    footer {
+      text-align: center;
+      padding: 1rem;
+      background: rgba(0,0,0,0.8);
+      color: #aaa;
+      font-size: 0.9rem;
+    }
+    footer a {
+      color: #fdf6e3;
+      text-decoration: none;
+      margin: 0 0.5rem;
+    }
+    footer a:hover {
+      color: #a0aec0;
+    }
   </style>
 </head>
 <body>
-  <header>
-    <h1>Pallak Dhabalia</h1>
-    <p>CS & DS @ University of Michigan | Software Engineering · Data Science · AI/ML</p>
-  </header>
 
+  <!-- NAVBAR -->
   <nav>
+    <a href="#hero">Home</a>
     <a href="#about">About</a>
     <a href="#experience">Experience</a>
     <a href="#projects">Projects</a>
@@ -147,90 +103,101 @@ html {
     <a href="#contact">Contact</a>
   </nav>
 
+  <!-- HERO SECTION -->
+  <section id="hero">
+    <div class="reveal">
+      <h1>Pallak Dhabalia</h1>
+      <p>CS & DS @ University of Michigan | Software Engineering · Data Science · AI/ML</p>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
   <section id="about">
-    <h2>About Me</h2>
-    <p>
-      I'm a junior at the University of Michigan exploring software engineering,
-      data science, and AI/ML. I love learning, solving problems, and applying
-      technology to make an impact.
-    </p>
+    <div class="reveal">
+      <h2>About Me</h2>
+      <p>
+        I'm a junior at the University of Michigan exploring software engineering,
+        data science, and AI/ML. I love learning, solving problems, and applying
+        technology to make an impact.
+      </p>
+    </div>
   </section>
 
-  <!-- Experience -->
+  <!-- EXPERIENCE -->
   <section id="experience">
-    <h2>Experience</h2>
-    <div class="experience">
-      <h3>Data Science Developer</h3>
-      <p><strong>American Airlines - Flight Arrival Time Prediction</strong> · Aug 2025 - Dec 2025 · Ann Arbor, MI</p>
-      <ul>
-        <li>Built ML models (Logistic Regression, Decision Trees, Random Forest, LSTM, GBT) to predict flight arrival times.</li>
-        <li>Used Snowflake for data storage and SnowSQL for querying and feature extraction on large datasets.</li>
-        <li>Performed hyperparameter tuning and model evaluation to improve accuracy.</li>
-      </ul>
+    <div class="reveal">
+      <h2>Experience</h2>
+      <p><strong>American Airlines</strong> – Flight Arrival Time Prediction (Aug–Dec 2025)<br/>
+      <strong>Otsuka Pharmaceutical</strong> – Software Development Intern (May–Aug 2025)<br/>
+      <strong>University of Michigan</strong> – Undergraduate Research Assistant (2024–2025)</p>
     </div>
-    <!-- More experiences... -->
   </section>
 
-  <!-- Projects -->
-  <section id="projects" class="projects">
-    <h2>Projects</h2>
-    <ul>
-      <li>
-        <h3><a href="#">Dementia Assistant – MHacks</a></h3>
-        <p>Assistive AR tool using Snap Spectacles and a SnapML face recognition model, integrated with ASR and a Python backend.</p>
-      </li>
-      <li>
-        <h3><a href="#">AI-Powered Job Matching Platform</a></h3>
-        <p>FastAPI + React platform with Pinecone embeddings for semantic job-resume alignment and OpenAI-powered recommendations.</p>
-      </li>
-      <!-- More projects... -->
-    </ul>
+  <!-- PROJECTS -->
+  <section id="projects">
+    <div class="reveal">
+      <h2>Projects</h2>
+      <p>
+        Dementia Assistant (MHacks), AI-Powered Job Matching, Semantic Research Paper Finder,
+        Distributed Search Engine, Full-Stack Social Media Platform, Drone AI/ML Object Detection.
+      </p>
+    </div>
   </section>
 
+  <!-- SKILLS -->
   <section id="skills">
-    <h2>Skills</h2>
-    <ul class="skills">
-      <li>Python</li>
-      <li>C++</li>
-      <li>JavaScript</li>
-      <li>SQL</li>
-      <li>MATLAB</li>
-      <li>React</li>
-      <li>Node.js</li>
-      <li>PyTorch</li>
-      <li>Scikit-learn</li>
-      <li>Machine Learning</li>
-      <li>NLP</li>
-      <li>AWS</li>
-      <li>Docker</li>
-      <li>Hadoop</li>
-      <li>Oracle Database</li>
-    </ul>
-  </section>
-
-  <section id="education">
-    <h2>Education</h2>
-    <div class="education">
-      <h3>University of Michigan</h3>
-      <p>B.S. in Data Science & Computer Science · Expected May 2027</p>
-      <p>Activities: Michigan Data Science Team, SWE, Michigan Hackers, Michigan Drone Technology</p>
+    <div class="reveal">
+      <h2>Skills</h2>
+      <p>
+        Python · C++ · JavaScript · SQL · React · Node.js · PyTorch · Scikit-learn ·
+        AWS · Docker · Machine Learning · NLP
+      </p>
     </div>
   </section>
 
-  <section id="contact">
-    <h2>Contact</h2>
-    <p>📍 Ann Arbor, MI</p>
-    <p>📞 <a href="tel:+17325546270">+1 (732) 554-6270</a></p>
-    <p>✉️ <a href="mailto:pallak@umich.edu">pallak@umich.edu</a></p>
-    <p>
-      🌐 <a href="https://pallakk.github.io/pallak-website" target="_blank">Personal Website</a> |
-      <a href="https://linkedin.com/in/pallak-dhabalia" target="_blank">LinkedIn</a> |
-      <a href="https://github.com/pallakk" target="_blank">GitHub</a>
-    </p>
+  <!-- EDUCATION -->
+  <section id="education">
+    <div class="reveal">
+      <h2>Education</h2>
+      <p>B.S. in Data Science & Computer Science, University of Michigan (Expected May 2027)<br/>
+      Activities: Michigan Data Science Team, SWE, Michigan Hackers, Michigan Drone Technology</p>
+    </div>
   </section>
 
+  <!-- CONTACT -->
+  <section id="contact">
+    <div class="reveal">
+      <h2>Contact</h2>
+      <p>📍 Ann Arbor, MI<br/>
+      📧 <a href="mailto:pallak@umich.edu" style="color:#fdf6e3;">pallak@umich.edu</a><br/>
+      🌐 <a href="https://pallakk.github.io/pallak-website" target="_blank" style="color:#fdf6e3;">Website</a> |
+      <a href="https://linkedin.com/in/pallak-dhabalia" target="_blank" style="color:#fdf6e3;">LinkedIn</a> |
+      <a href="https://github.com/pallakk" target="_blank" style="color:#fdf6e3;">GitHub</a></p>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
   <footer>
     <p>© 2025 Pallak Dhabalia</p>
   </footer>
+
+  <!-- REVEAL ON SCROLL SCRIPT -->
+  <script>
+    const reveals = document.querySelectorAll(".reveal");
+
+    window.addEventListener("scroll", () => {
+      reveals.forEach((el) => {
+        const windowHeight = window.innerHeight;
+        const revealTop = el.getBoundingClientRect().top;
+        const revealPoint = 100;
+
+        if (revealTop < windowHeight - revealPoint) {
+          el.classList.add("active");
+        } else {
+          el.classList.remove("active");
+        }
+      });
+    });
+  </script>
 </body>
 </html>
