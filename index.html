@@ -6,130 +6,130 @@
   <title>Pallak Dhabalia</title>
   <style>
     body {
-      font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-      margin: 0;
-      padding: 0;
-      background: #b4778c; /* background light pink */
-      color: #6e879d; /* text color */
-      line-height: 1.6;
-    }
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  margin: 0;
+  padding: 0;
+  background: #EEEBd0; /* beige background */
+  color: #333; /* neutral text */
+  line-height: 1.6;
+}
 
-    /* ----- HEADER ----- */
-    header {
-      background: #b4778c; /* same background */
-      color: #6e879d; /* text color */
-      padding: 2rem 1rem;
-      text-align: center;
-    }
-    header h1 {
-      margin: 0.2rem 0;
-      font-size: 2.2rem;
-      color: #6e879d; /* heading text */
-    }
+/* ----- HEADER ----- */
+header {
+  background: #E87EA1; /* rose pompadour */
+  color: white;
+  padding: 2rem 1rem;
+  text-align: center;
+}
+header h1 {
+  margin: 0.2rem 0;
+  font-size: 2.2rem;
+  color: white;
+}
 
-    /* ----- NAV ----- */
-    nav {
-      background: #6e879d; /* accent background */
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      padding: 0.7rem;
-    }
-    nav a {
-      margin: 0.5rem 1rem;
-      text-decoration: none;
-      color: #b4778c; /* link text */
-      font-weight: 600;
-    }
-    nav a:hover {
-      color: #ffffff; /* contrast on hover */
-    }
+/* ----- NAVIGATION ----- */
+nav {
+  background: #E86252; /* bittersweet */
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding: 0.7rem;
+}
+nav a {
+  margin: 0.5rem 1rem;
+  text-decoration: none;
+  color: white;
+  font-weight: 600;
+}
+nav a:hover {
+  color: #EEEBd0; /* beige hover */
+}
 
-    section {
-      max-width: 900px;
-      margin: 1.5rem auto;
-      padding: 0 1rem;
-    }
-    section h2 {
-      border-bottom: 2px solid #6e879d; /* accent border */
-      padding-bottom: 0.3rem;
-      margin-bottom: 1rem;
-      color: #6e879d; /* section headings */
-    }
+/* ----- SECTION TITLES ----- */
+section h2 {
+  border-bottom: 2px solid #EBB3A9; /* melon accent */
+  padding-bottom: 0.3rem;
+  margin-bottom: 1rem;
+  color: #E86252; /* bittersweet text */
+}
 
-    .experience, .education, .project {
-      margin-bottom: 1.5rem;
-    }
-    .experience h3, .education h3, .project h3 {
-      margin: 0.3rem 0;
-      color: #6e879d;
-    }
+/* ----- EXPERIENCE & EDUCATION ----- */
+.experience, .education {
+  background: white;
+  border-left: 5px solid #E87EA1; /* rose pompadour accent */
+  padding: 1rem;
+  margin-bottom: 1.5rem;
+  border-radius: 6px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+}
 
-    /* ----- SKILLS GRID ----- */
-    ul.skills {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-      gap: 0.5rem;
-      list-style: none;
-      padding: 0;
-    }
-    ul.skills li {
-      background: #ffffff; /* contrast card background */
-      color: #6e879d;
-      padding: 0.5rem;
-      border-radius: 6px;
-      text-align: center;
-    }
+/* ----- PROJECTS GRID ----- */
+.projects ul {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 1rem;
+  list-style: none;
+  padding: 0;
+}
+.projects li {
+  background: white;
+  border: 1px solid #EBB3A9; /* melon accent */
+  border-radius: 8px;
+  padding: 1rem;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.projects li:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+.projects h3 a {
+  color: #E86252; /* bittersweet */
+  text-decoration: none;
+}
+.projects h3 a:hover {
+  color: #E87EA1; /* rose pompadour */
+  text-decoration: underline;
+}
 
-    /* ----- PROJECTS GRID ----- */
-    .projects ul {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
-      gap: 1rem;
-      list-style: none;
-      padding: 0;
-    }
-    .projects li {
-      background: #ffffff; /* contrast card background */
-      padding: 1rem;
-      border-radius: 8px;
-      border: 1px solid #6e879d; /* accent border */
-      box-shadow: 0 2px 5px rgba(0,0,0,0.05);
-      transition: transform 0.2s ease, box-shadow 0.2s ease;
-      color: #6e879d;
-    }
-    .projects li:hover {
-      transform: translateY(-3px);
-      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-    }
-    .projects h3 a {
-      color: #6e879d;
-    }
-    .projects h3 a:hover {
-      color: #b4778c;
-    }
+/* ----- SKILLS ----- */
+ul.skills {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 0.5rem;
+  list-style: none;
+  padding: 0;
+}
+ul.skills li {
+  background: #EBB3A9; /* melon card */
+  color: white;
+  padding: 0.6rem;
+  border-radius: 6px;
+  text-align: center;
+  font-weight: 600;
+}
 
-    /* ----- FOOTER ----- */
-    footer {
-      text-align: center;
-      padding: 1.5rem;
-      background: #6e879d; /* accent background */
-      color: #b4778c; /* footer text */
-      margin-top: 2rem;
-    }
-    footer a {
-      color: #b4778c;
-      text-decoration: none;
-      margin: 0 0.5rem;
-    }
-    footer a:hover {
-      color: #ffffff; /* contrast on hover */
-    }
+/* ----- FOOTER ----- */
+footer {
+  text-align: center;
+  padding: 1.5rem;
+  background: #E87EA1; /* rose pompadour */
+  color: white;
+  margin-top: 2rem;
+}
+footer a {
+  color: #EEEBd0; /* beige links */
+  text-decoration: none;
+  margin: 0 0.5rem;
+}
+footer a:hover {
+  color: #E86252; /* bittersweet hover */
+}
 
-    /* ----- SMOOTH SCROLL ----- */
-    html {
-      scroll-behavior: smooth;
-    }
+/* Smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
   </style>
 </head>
 <body>
