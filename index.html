@@ -5,39 +5,40 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Pallak Dhabalia</title>
   <style>
-    /* ----- GLOBAL STYLES ----- */
     body {
       margin: 0;
       padding: 0;
       font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-      color: #fff; /* white text */
-      background: url("images/bg.jpg") no-repeat center center fixed; /* replace with your stars image path */
+      color: #fff;
+      background: url("stars.jpg") no-repeat center center fixed; /* replace with your stars image path */
       background-size: cover;
       scroll-behavior: smooth;
     }
 
+    /* Sections */
     section {
-      height: 100vh; /* each section full screen */
+      min-height: 100vh;
       display: flex;
+      flex-direction: column;
       align-items: center;
       justify-content: center;
       text-align: center;
-      padding: 2rem;
-      background: rgba(0, 0, 0, 0.6); /* dark overlay */
+      padding: 3rem 1rem;
+      background: rgba(0, 0, 0, 0.6);
     }
     section h1, section h2 {
       margin-bottom: 1rem;
-      color: #fdf6e3; /* pale star-yellow highlight */
+      color: #fdf6e3; /* pale-yellow accent */
     }
     section p {
-      max-width: 700px;
+      max-width: 800px;
       margin: auto;
-      font-size: 1.2rem;
+      font-size: 1.1rem;
       line-height: 1.6;
-      color: #ddd; /* softer text */
+      color: #ddd;
     }
 
-    /* ----- REVEAL ANIMATION ----- */
+    /* Reveal animation */
     .reveal {
       opacity: 0;
       transform: translateY(40px);
@@ -48,13 +49,13 @@
       transform: translateY(0);
     }
 
-    /* ----- NAVBAR ----- */
+    /* Navbar */
     nav {
       position: fixed;
       top: 0;
       left: 0;
       width: 100%;
-      background: rgba(0, 0, 0, 0.8); /* translucent black */
+      background: rgba(0, 0, 0, 0.8);
       display: flex;
       justify-content: center;
       gap: 1.5rem;
@@ -63,16 +64,51 @@
       backdrop-filter: blur(6px);
     }
     nav a {
-      color: #fdf6e3; /* pale star-yellow */
+      color: #fdf6e3;
       text-decoration: none;
       font-weight: 600;
       transition: color 0.3s;
     }
     nav a:hover {
-      color: #a0aec0; /* soft blue-gray */
+      color: #a0aec0;
     }
 
-    /* ----- FOOTER ----- */
+    /* Card layout for experience/projects */
+    .card-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+      gap: 1.5rem;
+      width: 100%;
+      max-width: 1000px;
+      margin-top: 2rem;
+    }
+    .card {
+      background: rgba(0,0,0,0.7);
+      border: 1px solid #444;
+      border-radius: 10px;
+      padding: 1.5rem;
+      text-align: left;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.4);
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+    .card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 4px 12px rgba(0,0,0,0.6);
+    }
+    .card h3 {
+      margin-top: 0;
+      color: #fdf6e3;
+    }
+    .card ul {
+      padding-left: 1.2rem;
+    }
+    .card li {
+      margin-bottom: 0.6rem;
+      color: #ccc;
+      font-size: 0.95rem;
+    }
+
+    /* Footer */
     footer {
       text-align: center;
       padding: 1rem;
@@ -92,7 +128,7 @@
 </head>
 <body>
 
-  <!-- NAVBAR -->
+  <!-- Navbar -->
   <nav>
     <a href="#hero">Home</a>
     <a href="#about">About</a>
@@ -103,7 +139,7 @@
     <a href="#contact">Contact</a>
   </nav>
 
-  <!-- HERO SECTION -->
+  <!-- Hero -->
   <section id="hero">
     <div class="reveal">
       <h1>Pallak Dhabalia</h1>
@@ -111,7 +147,7 @@
     </div>
   </section>
 
-  <!-- ABOUT -->
+  <!-- About -->
   <section id="about">
     <div class="reveal">
       <h2>About Me</h2>
@@ -123,74 +159,156 @@
     </div>
   </section>
 
-  <!-- EXPERIENCE -->
+  <!-- Experience -->
   <section id="experience">
     <div class="reveal">
       <h2>Experience</h2>
-      <p><strong>American Airlines</strong> – Flight Arrival Time Prediction (Aug–Dec 2025)<br/>
-      <strong>Otsuka Pharmaceutical</strong> – Software Development Intern (May–Aug 2025)<br/>
-      <strong>University of Michigan</strong> – Undergraduate Research Assistant (2024–2025)</p>
+      <div class="card-container">
+        <div class="card">
+          <h3>American Airlines – Flight Arrival Time Prediction</h3>
+          <p><em>Data Science Developer | Aug 2025 – Dec 2025 | Ann Arbor, MI</em></p>
+          <ul>
+            <li>Built ML models (Logistic Regression, Decision Trees, Random Forest, LSTM, GBT) to predict flight arrival times.</li>
+            <li>Used Snowflake for data storage and SnowSQL for querying and feature extraction on large datasets.</li>
+            <li>Performed hyperparameter tuning and model evaluation to improve accuracy.</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h3>Otsuka Pharmaceutical Co. – Safety Data Management</h3>
+          <p><em>Software Development Intern | May 2025 – Aug 2025 | Princeton, NJ</em></p>
+          <ul>
+            <li>Automated access control, saving 80+ hours of manual work for 50+ stakeholders.</li>
+            <li>Developed regulatory reporting pipelines in Oracle SQL & Python, cutting turnaround time by 80+ hours.</li>
+            <li>Launched CLI tools integrating global safety systems, ensuring FDA/EMA compliance.</li>
+            <li>Collaborated with 7 engineers in agile sprints to deliver production systems.</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h3>University of Michigan – Cardiovascular Physiology Lab</h3>
+          <p><em>Undergraduate Research Assistant | Sept 2024 – Apr 2025 | Ann Arbor, MI</em></p>
+          <ul>
+            <li>Processed 400+ multimodal patient records with Python/MATLAB.</li>
+            <li>Tuned ML models (Logistic Regression, Random Forest) achieving 85% accuracy.</li>
+            <li>Built reproducible pipelines ensuring consistency and reducing manual effort.</li>
+            <li>Presented findings at the Undergraduate Research Symposium.</li>
+          </ul>
+        </div>
+      </div>
     </div>
   </section>
 
-  <!-- PROJECTS -->
+  <!-- Projects -->
   <section id="projects">
     <div class="reveal">
       <h2>Projects</h2>
-      <p>
-        Dementia Assistant (MHacks), AI-Powered Job Matching, Semantic Research Paper Finder,
-        Distributed Search Engine, Full-Stack Social Media Platform, Drone AI/ML Object Detection.
-      </p>
+      <div class="card-container">
+        <div class="card">
+          <h3>Dementia Assistant – MHacks</h3>
+          <p><em>Snap-Lens Studio, SnapML, ASR, Python</em></p>
+          <ul>
+            <li>Assistive AR tool using Snap Spectacles and a SnapML model to recognize faces.</li>
+            <li>Integrated ASR in JavaScript to transcribe and read names for accessibility.</li>
+            <li>Designed a Python backend for storing recognized faces; won Best Healthcare Project at MHacks.</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h3>AI-Powered Job Matching Platform</h3>
+          <p><em>FastAPI, React, Pinecone, OpenAI</em></p>
+          <ul>
+            <li>Developed semantic job-matching using embeddings and vector similarity search.</li>
+            <li>Implemented resume parsing and ranking algorithms with real-time recommendations.</li>
+            <li>Built a scalable backend paired with an interactive React frontend.</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h3>Semantic Paper Finder</h3>
+          <p><em>Python, SBERT, NLP, FAISS</em></p>
+          <ul>
+            <li>Built a semantic search engine over 10K+ arXiv abstracts using SBERT embeddings.</li>
+            <li>Integrated FAISS vector DB for high-performance similarity search.</li>
+            <li>Enabled natural language queries for meaning-based research discovery.</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h3>Distributed Search Engine</h3>
+          <p><em>Python, Flask, MapReduce, AWS</em></p>
+          <ul>
+            <li>Architected a MapReduce-based engine with inverted indexing and PageRank.</li>
+            <li>Deployed microservices on AWS EC2, ensuring high availability.</li>
+            <li>Achieved 80% faster query times on large document sets.</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h3>Full-Stack Social Media Platform</h3>
+          <p><em>Python, React, Node.js, SQLite3</em></p>
+          <ul>
+            <li>Developed a responsive React app with authentication and image uploads.</li>
+            <li>Designed a normalized SQLite3 schema with REST APIs in Node.js.</li>
+            <li>Containerized services with Docker for consistent deployment.</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h3>Drone AI/ML Object Detection</h3>
+          <p><em>Python, OpenCV, TensorFlow</em></p>
+          <ul>
+            <li>Led a 5-member team at Michigan Drone Technology.</li>
+            <li>Built an AI-powered detection system achieving 90% accuracy for obstacles.</li>
+            <li>Integrated into drone pipeline for safer autonomous flight.</li>
+          </ul>
+        </div>
+      </div>
     </div>
   </section>
 
-  <!-- SKILLS -->
+  <!-- Skills -->
   <section id="skills">
     <div class="reveal">
       <h2>Skills</h2>
       <p>
         Python · C++ · JavaScript · SQL · React · Node.js · PyTorch · Scikit-learn ·
-        AWS · Docker · Machine Learning · NLP
+        AWS · Docker · Machine Learning · NLP · Hadoop · Oracle Database
       </p>
     </div>
   </section>
 
-  <!-- EDUCATION -->
+  <!-- Education -->
   <section id="education">
     <div class="reveal">
       <h2>Education</h2>
-      <p>B.S. in Data Science & Computer Science, University of Michigan (Expected May 2027)<br/>
-      Activities: Michigan Data Science Team, SWE, Michigan Hackers, Michigan Drone Technology</p>
+      <p>
+        B.S. in Data Science & Computer Science, University of Michigan (Expected May 2027)<br/>
+        Activities: Michigan Data Science Team, SWE, Michigan Hackers, Michigan Drone Technology
+      </p>
     </div>
   </section>
 
-  <!-- CONTACT -->
+  <!-- Contact -->
   <section id="contact">
     <div class="reveal">
       <h2>Contact</h2>
-      <p>📍 Ann Arbor, MI<br/>
-      📧 <a href="mailto:pallak@umich.edu" style="color:#fdf6e3;">pallak@umich.edu</a><br/>
-      🌐 <a href="https://pallakk.github.io/pallak-website" target="_blank" style="color:#fdf6e3;">Website</a> |
-      <a href="https://linkedin.com/in/pallak-dhabalia" target="_blank" style="color:#fdf6e3;">LinkedIn</a> |
-      <a href="https://github.com/pallakk" target="_blank" style="color:#fdf6e3;">GitHub</a></p>
+      <p>
+        📍 Ann Arbor, MI<br/>
+        📧 <a href="mailto:pallak@umich.edu" style="color:#fdf6e3;">pallak@umich.edu</a><br/>
+        🌐 <a href="https://pallakk.github.io/pallak-website" target="_blank" style="color:#fdf6e3;">Website</a> |
+        <a href="https://linkedin.com/in/pallak-dhabalia" target="_blank" style="color:#fdf6e3;">LinkedIn</a> |
+        <a href="https://github.com/pallakk" target="_blank" style="color:#fdf6e3;">GitHub</a>
+      </p>
     </div>
   </section>
 
-  <!-- FOOTER -->
+  <!-- Footer -->
   <footer>
     <p>© 2025 Pallak Dhabalia</p>
   </footer>
 
-  <!-- REVEAL ON SCROLL SCRIPT -->
+  <!-- Reveal on scroll -->
   <script>
     const reveals = document.querySelectorAll(".reveal");
-
     window.addEventListener("scroll", () => {
       reveals.forEach((el) => {
         const windowHeight = window.innerHeight;
         const revealTop = el.getBoundingClientRect().top;
         const revealPoint = 100;
-
         if (revealTop < windowHeight - revealPoint) {
           el.classList.add("active");
         } else {
