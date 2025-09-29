@@ -13,9 +13,11 @@
       color: #333;
       line-height: 1.6;
     }
+
+    /* ----- HEADER COLORS ----- */
     header {
-      background: #2d2b89;
-      color: rgba(155, 133, 222, 0.441);
+      background: #891b42; /* primary deep maroon */
+      color: #e2e8f0;
       padding: 2rem 1rem;
       text-align: center;
     }
@@ -23,8 +25,10 @@
       margin: 0.2rem 0;
       font-size: 2.2rem;
     }
+
+    /* ----- NAV COLORS ----- */
     nav {
-      background: #f4f4f4;
+      background: #edf2f7;
       display: flex;
       flex-wrap: wrap;
       justify-content: center;
@@ -33,29 +37,33 @@
     nav a {
       margin: 0.5rem 1rem;
       text-decoration: none;
-      color: #5b0720;
+      color: #891b42; /* primary deep maroon */
       font-weight: 600;
     }
     nav a:hover {
-      text-decoration: underline;
+      color: #178281; /* accent teal */
     }
+
     section {
       max-width: 900px;
-      margin: 2rem auto;
+      margin: 1.5rem auto; /* tightened spacing */
       padding: 0 1rem;
     }
     section h2 {
-      border-bottom: 2px solid #32031b;
+      border-bottom: 2px solid #891b42; /* primary deep maroon */
       padding-bottom: 0.3rem;
       margin-bottom: 1rem;
       color: #1a365d;
     }
+
     .experience, .education, .project {
       margin-bottom: 1.5rem;
     }
     .experience h3, .education h3, .project h3 {
       margin: 0.3rem 0;
     }
+
+    /* ----- SKILLS GRID ----- */
     ul.skills {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
@@ -69,29 +77,39 @@
       border-radius: 6px;
       text-align: center;
     }
+
+    /* ----- PROJECTS GRID LAYOUT ----- */
     .projects ul {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+      gap: 1rem;
       list-style: none;
       padding: 0;
     }
     .projects li {
-      margin-bottom: 1rem;
-      background: #f9fafb;
+      background: #f7fafc;
       padding: 1rem;
-      border-left: 4px solid #891b42;
-      border-radius: 6px;
+      border-radius: 8px;
+      border: 1px solid #e2e8f0;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
     }
-    .projects a {
-      color: #891b42;
-      font-weight: 600;
-      text-decoration: none;
+    .projects li:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
     }
-    .projects a:hover {
-      text-decoration: underline;
+    .projects h3 a {
+      color: #891b42; /* primary deep maroon */
     }
+    .projects h3 a:hover {
+      color: #178281; /* accent teal */
+    }
+
+    /* ----- FOOTER COLORS ----- */
     footer {
       text-align: center;
       padding: 1.5rem;
-      background: #891b42;
+      background: #891b42; /* primary deep maroon */
       color: white;
       margin-top: 2rem;
     }
@@ -100,58 +118,11 @@
       text-decoration: none;
       margin: 0 0.5rem;
     }
-    /* Smooth scrolling */
-html {
-  scroll-behavior: smooth;
-}
 
-/* Updated header + nav colors */
-header {
-  background: #891b42;
-  color: #e2e8f0;
-}
-nav {
-  background: #edf2f7;
-}
-nav a {
-  color: #891b42;
-}
-nav a:hover {
-  color: #178281;
-}
-
-/* Project grid layout */
-.projects ul {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
-  gap: 1rem;
-  list-style: none;
-  padding: 0;
-}
-.projects li {
-  background: #f7fafc;
-  padding: 1rem;
-  border-radius: 8px;
-  border: 1px solid #e2e8f0;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.05);
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
-}
-.projects li:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-}
-.projects h3 a {
-  color: #891b42;
-}
-.projects h3 a:hover {
-  color: #178281;
-}
-
-/* Tighten section spacing */
-section {
-  margin: 1.5rem auto;
-}
-
+    /* ----- SMOOTH SCROLLING ----- */
+    html {
+      scroll-behavior: smooth;
+    }
   </style>
 </head>
 <body>
@@ -159,6 +130,7 @@ section {
     <h1>Pallak Dhabalia</h1>
     <p>CS & DS @ University of Michigan | Software Engineering · Data Science · AI/ML</p>
   </header>
+
   <nav>
     <a href="#about">About</a>
     <a href="#experience">Experience</a>
@@ -178,68 +150,69 @@ section {
   </section>
 
   <section id="experience">
-  <h2>Experience</h2>
-  <div class="experience">
-    <h3>Data Science Developer</h3>
-    <p><strong>American Airlines - Flight Arrival Time Prediction</strong> · Aug 2025 - Dec 2025 · Ann Arbor, MI</p>
-    <ul>
-      <li>Built ML models (Logistic Regression, Decision Trees, Random Forest, LSTM, GBT) to predict flight arrival times.</li>
-      <li>Used Snowflake for data storage and SnowSQL for querying and feature extraction on large datasets.</li>
-      <li>Performed hyperparameter tuning and model evaluation to improve accuracy.</li>
-    </ul>
-  </div>
+    <h2>Experience</h2>
+    <div class="experience">
+      <h3>Data Science Developer</h3>
+      <p><strong>American Airlines - Flight Arrival Time Prediction</strong> · Aug 2025 - Dec 2025 · Ann Arbor, MI</p>
+      <ul>
+        <li>Built ML models (Logistic Regression, Decision Trees, Random Forest, LSTM, GBT) to predict flight arrival times.</li>
+        <li>Used Snowflake for data storage and SnowSQL for querying and feature extraction on large datasets.</li>
+        <li>Performed hyperparameter tuning and model evaluation to improve accuracy.</li>
+      </ul>
+    </div>
 
-  <div class="experience">
-    <h3>Software Development Intern</h3>
-    <p><strong>Otsuka Pharmaceutical Companies (U.S.)</strong> · May 2025 - Aug 2025 · Princeton, NJ</p>
-    <ul>
-      <li>Automated access control to 15 apps using usage logs, saving 80+ hours for 50+ stakeholders.</li>
-      <li>Developed reporting pipelines in Oracle SQL & Python, reducing turnaround time significantly.</li>
-      <li>Launched CLI tools integrating global safety systems, ensuring FDA/EMA compliance.</li>
-      <li>Worked in agile sprints with cross-functional teams to deliver production systems.</li>
-    </ul>
-  </div>
+    <div class="experience">
+      <h3>Software Development Intern</h3>
+      <p><strong>Otsuka Pharmaceutical Companies (U.S.)</strong> · May 2025 - Aug 2025 · Princeton, NJ</p>
+      <ul>
+        <li>Automated access control to 15 apps using usage logs, saving 80+ hours for 50+ stakeholders.</li>
+        <li>Developed reporting pipelines in Oracle SQL & Python, reducing turnaround time significantly.</li>
+        <li>Launched CLI tools integrating global safety systems, ensuring FDA/EMA compliance.</li>
+        <li>Worked in agile sprints with cross-functional teams to deliver production systems.</li>
+      </ul>
+    </div>
 
-  <div class="experience">
-    <h3>Undergraduate Research Assistant</h3>
-    <p><strong>University of Michigan - Cardio Bio-Mechanics Lab</strong> · Sept 2024 - Present · Ann Arbor, MI</p>
+    <div class="experience">
+      <h3>Undergraduate Research Assistant</h3>
+      <p><strong>University of Michigan - Cardio Bio-Mechanics Lab</strong> · Sept 2024 - Present · Ann Arbor, MI</p>
+      <ul>
+        <li>Analyzed datasets from 400+ patients and validated ML outcomes with T-tests.</li>
+        <li>Trained models (Logistic Regression, Decision Trees, Random Forest) with 85% accuracy.</li>
+        <li>Built reproducible ML pipeline aligned with clinical standards.</li>
+        <li>Presented findings at Undergraduate Research Symposium influencing model directions.</li>
+      </ul>
+    </div>
+  </section>
+
+  <section id="projects" class="projects">
+    <h2>Projects</h2>
     <ul>
-      <li>Analyzed datasets from 400+ patients and validated ML outcomes with T-tests.</li>
-      <li>Trained models (Logistic Regression, Decision Trees, Random Forest) with 85% accuracy.</li>
-      <li>Built reproducible ML pipeline aligned with clinical standards.</li>
-      <li>Presented findings at Undergraduate Research Symposium influencing model directions.</li>
+      <li>
+        <h3><a href="https://github.com/pallakk/Dementia-Assistant" target="_blank">Dementia Assistant – MHacks</a></h3>
+        <p>Assistive AR tool using Snap Spectacles and a SnapML face recognition model, integrated with ASR and a Python backend.</p>
+      </li>
+      <li>
+        <h3><a href="https://github.com/pallakk/job-matching-site" target="_blank">AI-Powered Job Matching Platform</a></h3>
+        <p>FastAPI + React platform with Pinecone embeddings for semantic job-resume alignment and OpenAI-powered recommendations.</p>
+      </li>
+      <li>
+        <h3><a href="https://github.com/pallakk/Semantic-Search---Research-Paper-Finder" target="_blank">Semantic Research Paper Finder</a></h3>
+        <p>SBERT + FAISS semantic search engine over arXiv abstracts, enabling smarter paper discovery with natural language queries.</p>
+      </li>
+      <li>
+        <h3><a href="https://github.com/pallakk/Inverted-Index-Search-Engine" target="_blank">Distributed Search Engine</a></h3>
+        <p>MapReduce-based search engine with TF-IDF & PageRank, deployed on AWS with a microservices architecture.</p>
+      </li>
+      <li>
+        <h3><a href="https://github.com/pallakk/Instagram-Clone" target="_blank">Full-Stack Social Media Platform</a></h3>
+        <p>React + Node.js app with authentication, REST APIs, and Docker deployment for consistent workflows.</p>
+      </li>
+      <li>
+        <h3><a href="https://github.com/pallakk/CV-Object-Detection-With-Python" target="_blank">Drone AI/ML Object Detection</a></h3>
+        <p>Led a 5-member team at Michigan Drone Technology; built a model achieving 90% obstacle detection accuracy.</p>
+      </li>
     </ul>
-  </div>
-</section>
-<section id="projects" class="projects">
-  <h2>Projects</h2>
-  <ul>
-    <li>
-      <h3><a href="https://github.com/pallakk/Dementia-Assistant" target="_blank">Dementia Assistant – MHacks</a></h3>
-      <p>Assistive AR tool using Snap Spectacles and a SnapML face recognition model, integrated with ASR and a Python backend.</p>
-    </li>
-    <li>
-      <h3><a href="https://github.com/pallakk/job-matching-site" target="_blank">AI-Powered Job Matching Platform</a></h3>
-      <p>FastAPI + React platform with Pinecone embeddings for semantic job-resume alignment and OpenAI-powered recommendations.</p>
-    </li>
-    <li>
-      <h3><a href="https://github.com/pallakk/Semantic-Search---Research-Paper-Finder" target="_blank">Semantic Research Paper Finder</a></h3>
-      <p>SBERT + FAISS semantic search engine over arXiv abstracts, enabling smarter paper discovery with natural language queries.</p>
-    </li>
-    <li>
-      <h3><a href="https://github.com/pallakk/Inverted-Index-Search-Engine" target="_blank">Distributed Search Engine</a></h3>
-      <p>MapReduce-based search engine with TF-IDF & PageRank, deployed on AWS with a microservices architecture.</p>
-    </li>
-    <li>
-      <h3><a href="https://github.com/pallakk/Instagram-Clone" target="_blank">Full-Stack Social Media Platform</a></h3>
-      <p>React + Node.js app with authentication, REST APIs, and Docker deployment for consistent workflows.</p>
-    </li>
-    <li>
-      <h3><a href="https://github.com/pallakk/CV-Object-Detection-With-Python" target="_blank">Drone AI/ML Object Detection</a></h3>
-      <p>Led a 5-member team at Michigan Drone Technology; built a model achieving 90% obstacle detection accuracy.</p>
-    </li>
-  </ul>
-</section>
+  </section>
 
   <section id="skills">
     <h2>Skills</h2>
@@ -284,7 +257,7 @@ section {
   </section>
 
   <footer>
-    <p> 2025 Pallak Dhabalia</p>
+    <p>© 2025 Pallak Dhabalia</p>
   </footer>
 </body>
 </html>
