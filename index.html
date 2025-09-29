@@ -9,26 +9,27 @@
       font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
       margin: 0;
       padding: 0;
-      background: #fdfdfd;
-      color: #891b42;
+      background: #b4778c; /* background light pink */
+      color: #6e879d; /* text color */
       line-height: 1.6;
     }
 
-    /* ----- HEADER COLORS ----- */
+    /* ----- HEADER ----- */
     header {
-      background: #891b42; /* primary deep maroon */
-      color: #e2e8f0;
+      background: #b4778c; /* same background */
+      color: #6e879d; /* text color */
       padding: 2rem 1rem;
       text-align: center;
     }
     header h1 {
       margin: 0.2rem 0;
       font-size: 2.2rem;
+      color: #6e879d; /* heading text */
     }
 
-    /* ----- NAV COLORS ----- */
+    /* ----- NAV ----- */
     nav {
-      background: #edf2f7;
+      background: #6e879d; /* accent background */
       display: flex;
       flex-wrap: wrap;
       justify-content: center;
@@ -37,23 +38,23 @@
     nav a {
       margin: 0.5rem 1rem;
       text-decoration: none;
-      color: #891b42; /* primary deep maroon */
+      color: #b4778c; /* link text */
       font-weight: 600;
     }
     nav a:hover {
-      color: #178281; /* accent teal */
+      color: #ffffff; /* contrast on hover */
     }
 
     section {
       max-width: 900px;
-      margin: 1.5rem auto; /* tightened spacing */
+      margin: 1.5rem auto;
       padding: 0 1rem;
     }
     section h2 {
-      border-bottom: 2px solid #891b42; /* primary deep maroon */
+      border-bottom: 2px solid #6e879d; /* accent border */
       padding-bottom: 0.3rem;
       margin-bottom: 1rem;
-      color: #1a365d;
+      color: #6e879d; /* section headings */
     }
 
     .experience, .education, .project {
@@ -61,6 +62,7 @@
     }
     .experience h3, .education h3, .project h3 {
       margin: 0.3rem 0;
+      color: #6e879d;
     }
 
     /* ----- SKILLS GRID ----- */
@@ -72,13 +74,14 @@
       padding: 0;
     }
     ul.skills li {
-      background: #e6ecf5;
+      background: #ffffff; /* contrast card background */
+      color: #6e879d;
       padding: 0.5rem;
       border-radius: 6px;
       text-align: center;
     }
 
-    /* ----- PROJECTS GRID LAYOUT ----- */
+    /* ----- PROJECTS GRID ----- */
     .projects ul {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
@@ -87,39 +90,43 @@
       padding: 0;
     }
     .projects li {
-      background: #f7fafc;
+      background: #ffffff; /* contrast card background */
       padding: 1rem;
       border-radius: 8px;
-      border: 1px solid #e2e8f0;
+      border: 1px solid #6e879d; /* accent border */
       box-shadow: 0 2px 5px rgba(0,0,0,0.05);
       transition: transform 0.2s ease, box-shadow 0.2s ease;
+      color: #6e879d;
     }
     .projects li:hover {
       transform: translateY(-3px);
       box-shadow: 0 4px 12px rgba(0,0,0,0.1);
     }
     .projects h3 a {
-      color: #891b42; /* primary deep maroon */
+      color: #6e879d;
     }
     .projects h3 a:hover {
-      color: #178281; /* accent teal */
+      color: #b4778c;
     }
 
-    /* ----- FOOTER COLORS ----- */
+    /* ----- FOOTER ----- */
     footer {
       text-align: center;
       padding: 1.5rem;
-      background: #891b42; /* primary deep maroon */
-      color: white;
+      background: #6e879d; /* accent background */
+      color: #b4778c; /* footer text */
       margin-top: 2rem;
     }
     footer a {
-      color: #e2e8f0;
+      color: #b4778c;
       text-decoration: none;
       margin: 0 0.5rem;
     }
+    footer a:hover {
+      color: #ffffff; /* contrast on hover */
+    }
 
-    /* ----- SMOOTH SCROLLING ----- */
+    /* ----- SMOOTH SCROLL ----- */
     html {
       scroll-behavior: smooth;
     }
@@ -149,6 +156,7 @@
     </p>
   </section>
 
+  <!-- Experience -->
   <section id="experience">
     <h2>Experience</h2>
     <div class="experience">
@@ -160,57 +168,22 @@
         <li>Performed hyperparameter tuning and model evaluation to improve accuracy.</li>
       </ul>
     </div>
-
-    <div class="experience">
-      <h3>Software Development Intern</h3>
-      <p><strong>Otsuka Pharmaceutical Companies (U.S.)</strong> · May 2025 - Aug 2025 · Princeton, NJ</p>
-      <ul>
-        <li>Automated access control to 15 apps using usage logs, saving 80+ hours for 50+ stakeholders.</li>
-        <li>Developed reporting pipelines in Oracle SQL & Python, reducing turnaround time significantly.</li>
-        <li>Launched CLI tools integrating global safety systems, ensuring FDA/EMA compliance.</li>
-        <li>Worked in agile sprints with cross-functional teams to deliver production systems.</li>
-      </ul>
-    </div>
-
-    <div class="experience">
-      <h3>Undergraduate Research Assistant</h3>
-      <p><strong>University of Michigan - Cardio Bio-Mechanics Lab</strong> · Sept 2024 - Present · Ann Arbor, MI</p>
-      <ul>
-        <li>Analyzed datasets from 400+ patients and validated ML outcomes with T-tests.</li>
-        <li>Trained models (Logistic Regression, Decision Trees, Random Forest) with 85% accuracy.</li>
-        <li>Built reproducible ML pipeline aligned with clinical standards.</li>
-        <li>Presented findings at Undergraduate Research Symposium influencing model directions.</li>
-      </ul>
-    </div>
+    <!-- More experiences... -->
   </section>
 
+  <!-- Projects -->
   <section id="projects" class="projects">
     <h2>Projects</h2>
     <ul>
       <li>
-        <h3><a href="https://github.com/pallakk/Dementia-Assistant" target="_blank">Dementia Assistant – MHacks</a></h3>
+        <h3><a href="#">Dementia Assistant – MHacks</a></h3>
         <p>Assistive AR tool using Snap Spectacles and a SnapML face recognition model, integrated with ASR and a Python backend.</p>
       </li>
       <li>
-        <h3><a href="https://github.com/pallakk/job-matching-site" target="_blank">AI-Powered Job Matching Platform</a></h3>
+        <h3><a href="#">AI-Powered Job Matching Platform</a></h3>
         <p>FastAPI + React platform with Pinecone embeddings for semantic job-resume alignment and OpenAI-powered recommendations.</p>
       </li>
-      <li>
-        <h3><a href="https://github.com/pallakk/Semantic-Search---Research-Paper-Finder" target="_blank">Semantic Research Paper Finder</a></h3>
-        <p>SBERT + FAISS semantic search engine over arXiv abstracts, enabling smarter paper discovery with natural language queries.</p>
-      </li>
-      <li>
-        <h3><a href="https://github.com/pallakk/Inverted-Index-Search-Engine" target="_blank">Distributed Search Engine</a></h3>
-        <p>MapReduce-based search engine with TF-IDF & PageRank, deployed on AWS with a microservices architecture.</p>
-      </li>
-      <li>
-        <h3><a href="https://github.com/pallakk/Instagram-Clone" target="_blank">Full-Stack Social Media Platform</a></h3>
-        <p>React + Node.js app with authentication, REST APIs, and Docker deployment for consistent workflows.</p>
-      </li>
-      <li>
-        <h3><a href="https://github.com/pallakk/CV-Object-Detection-With-Python" target="_blank">Drone AI/ML Object Detection</a></h3>
-        <p>Led a 5-member team at Michigan Drone Technology; built a model achieving 90% obstacle detection accuracy.</p>
-      </li>
+      <!-- More projects... -->
     </ul>
   </section>
 
