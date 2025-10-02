@@ -9,8 +9,8 @@
       margin: 0;
       padding: 0;
       font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-      color: #fff;
-      background: url("stars.jpg") no-repeat center center fixed; /* replace with your stars image path */
+      color: #b3e1fa; /* light blue text */
+      background: url("images/bg.jpg") no-repeat center center fixed; 
       background-size: cover;
       scroll-behavior: smooth;
     }
@@ -28,14 +28,14 @@
     }
     section h1, section h2 {
       margin-bottom: 1rem;
-      color: #fdf6e3; /* pale-yellow accent */
+      color: #b3e1fa; /* headings in light blue */
     }
     section p {
       max-width: 800px;
       margin: auto;
-      font-size: 1.1rem;
+      font-size: 1.15rem;
       line-height: 1.6;
-      color: #ddd;
+      color: #b3e1fa;
     }
 
     /* Reveal animation */
@@ -64,13 +64,13 @@
       backdrop-filter: blur(6px);
     }
     nav a {
-      color: #fdf6e3;
+      color: #b3e1fa;
       text-decoration: none;
       font-weight: 600;
       transition: color 0.3s;
     }
     nav a:hover {
-      color: #a0aec0;
+      color: #ffffff;
     }
 
     /* Card layout for experience/projects */
@@ -90,6 +90,7 @@
       text-align: left;
       box-shadow: 0 2px 8px rgba(0,0,0,0.4);
       transition: transform 0.2s ease, box-shadow 0.2s ease;
+      color: #b3e1fa;
     }
     .card:hover {
       transform: translateY(-5px);
@@ -97,14 +98,14 @@
     }
     .card h3 {
       margin-top: 0;
-      color: #fdf6e3;
+      color: #b3e1fa;
     }
     .card ul {
       padding-left: 1.2rem;
     }
     .card li {
       margin-bottom: 0.6rem;
-      color: #ccc;
+      color: #b3e1fa;
       font-size: 0.95rem;
     }
 
@@ -113,16 +114,16 @@
       text-align: center;
       padding: 1rem;
       background: rgba(0,0,0,0.8);
-      color: #aaa;
+      color: #b3e1fa;
       font-size: 0.9rem;
     }
     footer a {
-      color: #fdf6e3;
+      color: #b3e1fa;
       text-decoration: none;
       margin: 0 0.5rem;
     }
     footer a:hover {
-      color: #a0aec0;
+      color: #ffffff;
     }
   </style>
 </head>
@@ -138,18 +139,37 @@
     <a href="#education">Education</a>
     <a href="#contact">Contact</a>
   </nav>
+    <!-- Scroll Down Indicator -->
+  <div class="scroll-indicator">
+    <span>Scroll down</span>
+  </div>
 
   <!-- Hero -->
-  <section id="hero">
-    <div class="reveal">
-      <h1>Pallak Dhabalia</h1>
-      <p>CS & DS @ University of Michigan | Software Engineering · Data Science · AI/ML</p>
-    </div>
-  </section>
+<section id="hero" style="display:flex; flex-wrap:wrap; align-items:center; justify-content:center; min-height:100vh; background:rgba(0,0,0,0.6);">
+  <div class="reveal" style="text-align:center; padding:2rem;">
+    <h1 style="font-size:3rem; color:#b3e1fa;">Pallak Dhabalia</h1>
+    <p style="font-size:1.3rem; color:#ddd;">
+      CS & DS @ University of Michigan<br/>
+      Software Engineering · Data Science · AI/ML
+    </p>
+  </div>
 
-  <!-- About -->
-  <section id="about">
-    <div class="reveal">
+  <!-- Scroll Down Indicator -->
+  <div class="scroll-indicator">
+    <span>↓ Scroll to get started ↓</span>
+  </div>
+</section>
+
+<!-- About -->
+<section id="about">
+  <div class="about-container">
+    <!-- Image -->
+    <div class="about-img">
+      <img src="images/profile.jpg" alt="Pallak Dhabalia" />
+    </div>
+
+    <!-- Text -->
+    <div class="about-text">
       <h2>About Me</h2>
       <p>
         I'm a junior at the University of Michigan exploring software engineering,
@@ -157,7 +177,22 @@
         technology to make an impact.
       </p>
     </div>
-  </section>
+  </div>
+</section>
+
+
+<!-- Education -->
+<section id="education">
+  <div class="reveal">
+    <h2>Education</h2>
+    <p>
+      Bachelor of Science @ College of Literature, Sciences, And Arts, University of Michigan (Expected May 2027)<br/>
+      Majors: Data Science, Computer Science <br/>
+      Activities: Michigan Data Science Team, Society of Women Engineers, Girls In EECS, Michigan Hackers, Michigan Drone Technology
+    </p>
+  </div>
+</section>
+
 
   <!-- Experience -->
   <section id="experience">
@@ -165,8 +200,8 @@
       <h2>Experience</h2>
       <div class="card-container">
         <div class="card">
-          <h3>American Airlines – Flight Arrival Time Prediction</h3>
-          <p><em>Data Science Developer | Aug 2025 – Dec 2025 | Ann Arbor, MI</em></p>
+          <h3>American Airlines - Flight Arrival Time Prediction</h3>
+          <p><em>Data Science Developer | Aug 2025 - Dec 2025 | Ann Arbor, MI</em></p>
           <ul>
             <li>Built ML models (Logistic Regression, Decision Trees, Random Forest, LSTM, GBT) to predict flight arrival times.</li>
             <li>Used Snowflake for data storage and SnowSQL for querying and feature extraction on large datasets.</li>
@@ -174,8 +209,8 @@
           </ul>
         </div>
         <div class="card">
-          <h3>Otsuka Pharmaceutical Co. – Safety Data Management</h3>
-          <p><em>Software Development Intern | May 2025 – Aug 2025 | Princeton, NJ</em></p>
+          <h3>Otsuka Pharmaceutical Co. - Safety Data Management</h3>
+          <p><em>Software Development Intern | May 2025 - Aug 2025 | Princeton, NJ</em></p>
           <ul>
             <li>Automated access control, saving 80+ hours of manual work for 50+ stakeholders.</li>
             <li>Developed regulatory reporting pipelines in Oracle SQL & Python, cutting turnaround time by 80+ hours.</li>
@@ -184,8 +219,8 @@
           </ul>
         </div>
         <div class="card">
-          <h3>University of Michigan – Cardiovascular Physiology Lab</h3>
-          <p><em>Undergraduate Research Assistant | Sept 2024 – Apr 2025 | Ann Arbor, MI</em></p>
+          <h3>University of Michigan - Cardiovascular Physiology Lab</h3>
+          <p><em>Undergraduate Research Assistant | Sept 2024 - Apr 2025 | Ann Arbor, MI</em></p>
           <ul>
             <li>Processed 400+ multimodal patient records with Python/MATLAB.</li>
             <li>Tuned ML models (Logistic Regression, Random Forest) achieving 85% accuracy.</li>
@@ -198,78 +233,104 @@
   </section>
 
   <!-- Projects -->
-  <section id="projects">
-    <div class="reveal">
-      <h2>Projects</h2>
-      <div class="card-container">
-        <div class="card">
-          <h3>Dementia Assistant – MHacks</h3>
-          <p><em>Snap-Lens Studio, SnapML, ASR, Python</em></p>
-          <ul>
-            <li>Assistive AR tool using Snap Spectacles and a SnapML model to recognize faces.</li>
-            <li>Integrated ASR in JavaScript to transcribe and read names for accessibility.</li>
-            <li>Designed a Python backend for storing recognized faces; won Best Healthcare Project at MHacks.</li>
-          </ul>
-        </div>
-        <div class="card">
-          <h3>AI-Powered Job Matching Platform</h3>
-          <p><em>FastAPI, React, Pinecone, OpenAI</em></p>
-          <ul>
-            <li>Developed semantic job-matching using embeddings and vector similarity search.</li>
-            <li>Implemented resume parsing and ranking algorithms with real-time recommendations.</li>
-            <li>Built a scalable backend paired with an interactive React frontend.</li>
-          </ul>
-        </div>
-        <div class="card">
-          <h3>Semantic Paper Finder</h3>
-          <p><em>Python, SBERT, NLP, FAISS</em></p>
-          <ul>
-            <li>Built a semantic search engine over 10K+ arXiv abstracts using SBERT embeddings.</li>
-            <li>Integrated FAISS vector DB for high-performance similarity search.</li>
-            <li>Enabled natural language queries for meaning-based research discovery.</li>
-          </ul>
-        </div>
-        <div class="card">
-          <h3>Distributed Search Engine</h3>
-          <p><em>Python, Flask, MapReduce, AWS</em></p>
-          <ul>
-            <li>Architected a MapReduce-based engine with inverted indexing and PageRank.</li>
-            <li>Deployed microservices on AWS EC2, ensuring high availability.</li>
-            <li>Achieved 80% faster query times on large document sets.</li>
-          </ul>
-        </div>
-        <div class="card">
-          <h3>Full-Stack Social Media Platform</h3>
-          <p><em>Python, React, Node.js, SQLite3</em></p>
-          <ul>
-            <li>Developed a responsive React app with authentication and image uploads.</li>
-            <li>Designed a normalized SQLite3 schema with REST APIs in Node.js.</li>
-            <li>Containerized services with Docker for consistent deployment.</li>
-          </ul>
-        </div>
-        <div class="card">
-          <h3>Drone AI/ML Object Detection</h3>
-          <p><em>Python, OpenCV, TensorFlow</em></p>
-          <ul>
-            <li>Led a 5-member team at Michigan Drone Technology.</li>
-            <li>Built an AI-powered detection system achieving 90% accuracy for obstacles.</li>
-            <li>Integrated into drone pipeline for safer autonomous flight.</li>
-          </ul>
-        </div>
+<section id="projects">
+  <div class="reveal">
+    <h2>Projects</h2>
+    <div class="card-container">
+
+      <div class="card">
+        <h3 style="color:#b3e1fa;">Dementia Assistant - MHacks</h3>
+        <p><em>Lens Studio, SnapML, ASR, GeminiAPI</em> · 
+          <a href="https://github.com/pallakk/Dementia-Assistant---MHacks-2025.git" target="_blank" style="color:#b3e1fa;">GitHub</a>
+        </p>
+        <ul>
+          <li>AR tool for dementia patients using Spectacles with YOLO v7 face recognition.</li>
+          <li>Integrated ASR in JavaScript for accessibility and Gemini API for voice assistance.</li>
+          <li>Python backend for storing encoded faces; won 1st place at MHacks 2025.</li>
+        </ul>
       </div>
+
+      <div class="card">
+        <h3 style="color:#b3e1fa;">AI-Powered Job Matching Platform</h3>
+        <p><em>FastAPI, React, Pinecone, OpenAI</em> · 
+          <a href="https://github.com/pallakk/job-matching-site.git" target="_blank" style="color:#b3e1fa;">GitHub</a>
+        </p>
+        <ul>
+          <li>Built job-matching system using embeddings & vector similarity search.</li>
+          <li>Implemented resume parsing and ranking algorithms with real-time recommendations.</li>
+          <li>Interactive React frontend with scalable backend.</li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <h3 style="color:#b3e1fa;">Semantic Paper Finder</h3>
+        <p><em>Python, SBERT, NLP, FAISS</em> · 
+          <a href="https://github.com/pallakk/Semantic-Search---Research-Paper-Finder.git" target="_blank" style="color:#b3e1fa;">GitHub</a>
+        </p>
+        <ul>
+          <li>Semantic search over 10K+ arXiv abstracts with SBERT embeddings.</li>
+          <li>Integrated FAISS DB for top-k scoring & high-performance search.</li>
+          <li>Enabled natural language queries instead of keyword search.</li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <h3 style="color:#b3e1fa;">Distributed Search Engine</h3>
+        <p><em>Python, Flask, MapReduce, AWS</em> · 
+          <a href="https://github.com/pallakk/Inverted-Index-Search-Engine.git" target="_blank" style="color:#b3e1fa;">GitHub</a>
+        </p>
+        <ul>
+          <li>MapReduce-based engine with inverted indexing, TF-IDF, PageRank.</li>
+          <li>Microservices architecture deployed on AWS EC2.</li>
+          <li>Achieved 80% faster query times vs. baseline implementations.</li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <h3 style="color:#b3e1fa;">Full-Stack Social Media Platform</h3>
+        <p><em>Python, React, Node.js, SQLite3</em> · 
+          <a href="https://github.com/pallakk/Instagram-Clone.git" target="_blank" style="color:#b3e1fa;">GitHub</a>
+        </p>
+        <ul>
+          <li>Responsive React app with authentication and image uploads.</li>
+          <li>REST APIs in Node.js with normalized SQLite3 schema.</li>
+          <li>Containerized with Docker for consistent deployment.</li>
+        </ul>
+      </div>
+
     </div>
-  </section>
+  </div>
+</section>
 
   <!-- Skills -->
-  <section id="skills">
-    <div class="reveal">
-      <h2>Skills</h2>
-      <p>
-        Python · C++ · JavaScript · SQL · React · Node.js · PyTorch · Scikit-learn ·
-        AWS · Docker · Machine Learning · NLP · Hadoop · Oracle Database
-      </p>
+<section id="skills">
+  <div class="reveal">
+    <h2>Skills</h2>
+    <div class="card-container">
+      <div class="card">
+        <h3 style="color:#b3e1fa;">Programming</h3>
+        <p>Python, C++, JavaScript, SQL, Java, Typescript</p>
+      </div>
+      <div class="card">
+        <h3 style="color:#b3e1fa;">Data Science/ML</h3>
+        <p>Machine Learning, NLP, PyTorch, Scikit-learn, Statistical Testing, Vector DB (FAISS)</p>
+      </div>
+      <div class="card">
+        <h3 style="color:#b3e1fa;">Data Platforms</h3>
+        <p>Snowflake, SnowSQL, Hadoop, AWS, Docker</p>
+      </div>
+      <div class="card">
+        <h3 style="color:#b3e1fa;">Frameworks/Tools</h3>
+        <p>React, Node.js, Flask, OpenCV, REST APIs, Git, Linux, Jupyter</p>
+      </div>
+      <div class="card">
+        <h3 style="color:#b3e1fa;">Databases</h3>
+        <p>MySQL, SQLite, Oracle, Snowflake</p>
+      </div>
     </div>
-  </section>
+  </div>
+</section>
+
 
   <!-- Education -->
   <section id="education">
@@ -288,17 +349,17 @@
       <h2>Contact</h2>
       <p>
         📍 Ann Arbor, MI<br/>
-        📧 <a href="mailto:pallak@umich.edu" style="color:#fdf6e3;">pallak@umich.edu</a><br/>
-        🌐 <a href="https://pallakk.github.io/pallak-website" target="_blank" style="color:#fdf6e3;">Website</a> |
-        <a href="https://linkedin.com/in/pallak-dhabalia" target="_blank" style="color:#fdf6e3;">LinkedIn</a> |
-        <a href="https://github.com/pallakk" target="_blank" style="color:#fdf6e3;">GitHub</a>
+        📧 <a href="mailto:pallak@umich.edu" style="color:#b3e1fa;">pallak@umich.edu</a><br/>
+        🌐 <a href="https://pallakk.github.io/pallak-website" target="_blank" style="color:#b3e1fa;">Website</a> |
+        <a href="https://linkedin.com/in/pallak-dhabalia" target="_blank" style="color:#b3e1fa;">LinkedIn</a> |
+        <a href="https://github.com/pallakk" target="_blank" style="color:#b3e1fa;">GitHub</a>
       </p>
     </div>
   </section>
 
   <!-- Footer -->
   <footer>
-    <p>© 2025 Pallak Dhabalia</p>
+    <p> 2025 Pallak Dhabalia</p>
   </footer>
 
   <!-- Reveal on scroll -->
